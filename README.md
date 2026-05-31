@@ -75,3 +75,5 @@ MIT license
 
 
 ## Live Demo
+
+https://user-info-dashboard-nu.vercel.app/
