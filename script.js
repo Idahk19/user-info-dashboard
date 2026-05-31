@@ -29,4 +29,16 @@ window.addEventListener("load", function () {
         document.getElementById("displayAge").textContent = savedAge;
     }
 });
+
+//Check the age status
+
+if (age>=18){
+    document.getElementById("ageStatus").textContent = 
+    "You can access adult content."
+} else {
+    document.getElementById("ageStatus").textContent =
+    "You are too young for adult content."
+}
+
 });
+
