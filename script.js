@@ -1,64 +1,78 @@
-document.addEventListener("DOMContentLoaded", function () {
- 
-// get data from the form id
-const form = document.getElementById("userForm"); 
+function resetData() {
+    // finds an id called results and hides it before data is entered
+    document.getElementById("results").classList.add("hidden");
 
-form.addEventListener("submit", function (event) {
-    event.preventDefault(); // stop page refresh
+    // Clear form inputs only so that they cant display on the input area
+    document.getElementById("userForm").reset();
+}
 
-    // Get information from the form
-    const name = document.getElementById("name").value;
-    const age = Number(document.getElementById("age").value);
+function displayUserData(name, age) { /* function that has all the data
+    (used on the on submit and load event to avod repetition ) */
 
-    // save to localStorage
-    localStorage.setItem("name", name);
-    localStorage.setItem("age", age);
+    // Show results section when data is input after submission
+    document.getElementById("results").classList.remove("hidden");
 
-    // Display in separate divs
-
-    // Name
-    document.getElementById("displayName").textContent =  
-    "Hello, " + name;
+    // Name/Greeting
+    document.getElementById("displayName").textContent =
+        "Hello, " + name;
 
     // Age
-    document.getElementById("displayAge").textContent = 
-    "You are " + (isNaN(age) ? "" : age) + " years old"; // terniary operator to check if age is a number
+    document.getElementById("displayAge").textContent =
+        "You are " + age + " years old";
 
-      //Check the age status
-
-    if (age>=18){
-       document.getElementById("ageStatus").textContent = 
-       "You can access adult content."
-    } else {
-       document.getElementById("ageStatus").textContent =
-       "You are too young for adult content."
-    }
-
+     // Age in months
     document.getElementById("ageMonths").textContent =
-   isNaN(age) ? "" : `Age in months: ${age * 12}`; // checks if its a number to multiply it
+        "Age in months: " + (age * 12);
 
-
-   const motivation = document.getElementById("quotes") ;
-
-   for (let i = 1; i <= 5; i++ ) {
-       motivation.innerHTML += "Keep pushing forward!<br>";
+    // Age status
+    if (age >= 18) {
+        document.getElementById("ageStatus").textContent =
+            "You can access adult content.";
+    } else {
+        document.getElementById("ageStatus").textContent =
+            "You are too young for adult content.";
     }
 
-});
-   // Load data after refresh
-window.addEventListener("load", function () {
-    const savedName = localStorage.getItem("name");
-    const savedAge = localStorage.getItem("age");
 
-     if (savedName && savedAge) {  
-        document.getElementById("displayName").textContent = savedName;
+    // Motivational quotes
+    const motivation = document.getElementById("quotes");
 
+    // Prevent duplicates
+    motivation.innerHTML = "";
 
-        document.getElementById("displayAge").textContent = savedAge;
-        }
+    for (let i = 1; i <= 5; i++) {
+        motivation.innerHTML += "Keep pushing forward!<br>";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () { /* code shoud not be run
+ till html page fully loads*/
     
-});
 
+    const form = document.getElementById("userForm"); // find form in html and store it in variable
 
+    // Load saved data after refresh
+    const savedName = localStorage.getItem("name");
+    const savedAge = Number(localStorage.getItem("age")); // converts age to number
+
+    if (savedName && savedAge) {
+        displayUserData(savedName, savedAge); // if the data exists in storage display it
+    }
+
+    // Form submission
+    form.addEventListener("submit", function (event) { // listen for form submission
+        event.preventDefault(); // stops page from refreshing(avoid data loss befor submission)
+   
+        // fetch data from html by id
+        const name = document.getElementById("name").value;
+        const age = Number(document.getElementById("age").value);
+
+        // Save data
+        localStorage.setItem("name", name);
+        localStorage.setItem("age", age);
+
+        // Display data
+        displayUserData(name, age);
+    });
 
 });
