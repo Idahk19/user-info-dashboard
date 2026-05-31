@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
 const form = document.getElementById("userForm");
 
 form.addEventListener("submit", function (event) {
@@ -11,17 +12,21 @@ form.addEventListener("submit", function (event) {
     localStorage.setItem("name", name);
     localStorage.setItem("age", age);
 
-    // show message immediately
-    document.getElementById("greeting").textContent =
-        `Welcome, ${name}!`;
-});
+    // Display in separate divs
+    document.getElementById("displayName").textContent = name;
+    document.getElementById("displayAge").textContent = age;
+} );
    // Load data after refresh
 window.addEventListener("load", function () {
     const savedName = localStorage.getItem("name");
     const savedAge = localStorage.getItem("age");
 
-    if (savedName) {
-        document.getElementById("greeting").textContent =
-            `Welcome back, ${savedName}!`;
+     if (savedName) {
+        document.getElementById("displayName").textContent = savedName;
     }
+
+    if (savedAge) {
+        document.getElementById("displayAge").textContent = savedAge;
+    }
+});
 });
