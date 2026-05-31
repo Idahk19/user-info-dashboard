@@ -33,19 +33,27 @@ form.addEventListener("submit", function (event) {
    isNaN(age) ? "" : `Age in months: ${age * 12}`; // checks if its a number to multiply it
 
 
+   const motivation = document.getElementById("quotes") ;
+
+   for (let i = 1; i <= 5; i++ ) {
+       motivation.innerHTML += "Keep pushing forward!<br>";
+    }
+
 });
    // Load data after refresh
 window.addEventListener("load", function () {
     const savedName = localStorage.getItem("name");
     const savedAge = localStorage.getItem("age");
 
-     if (savedName) {
+     if (savedName && savedAge) {  
         document.getElementById("displayName").textContent = savedName;
-    }
 
-    if (savedAge) {
+
         document.getElementById("displayAge").textContent = savedAge;
-    }
+        }
+    
 });
+
+
 
 });
