@@ -4,6 +4,7 @@ function resetData() {
 
     // Clear form inputs only so that they cant display on the input area
     document.getElementById("userForm").reset();
+
 }
 
 function displayUserData(name, age) { /* function that has all the data

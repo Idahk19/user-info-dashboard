@@ -15,7 +15,7 @@
         
             <div class=" grid md:grid-cols-2 gap-8 mt-5 ml-5 mb-5">
         
-            <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+            <div id="layout"  class="bg-gray-50 p-3 rounded-xl shadow-sm">
 
              <!-- Form -->
             <form id="userForm" space-y-4>
@@ -27,11 +27,12 @@
                 <label for="name" class="block text-md font-semibold mb-1">Age:</label>
                 <input type="number"  id="age" class="w-full p-3 rounded border border-gray-300" placeholder="Enter your age"><br><br>
                 <button type="submit"   class="block bg-purple-500 text-white px-6 py-3 rounded hover:bg-grey-800 w-full text-center ">Submit</button>
-            </form>
+            </form><br>
+            <button onclick="resetData()" class="block bg-purple-500 text-white px-8 py-3 rounded hover:bg-grey-800 w-full text-center ">Reset</button>
         </div>
 
         
-        <div id="results" class="hidden space-y-6">
+        <div id="results" class="hidden bg-gray-50 p-6 rounded-xl shadow-sm space-y-6">
 
         <!-- Greetings -->
 
@@ -58,9 +59,6 @@
         </div>
 
        </div>
-        <button onclick="resetData()" class="bg-purple-500 text-white px-2 py-1 text-sm rounded">
-          Reset
-        </button>
     
        </div>
       
