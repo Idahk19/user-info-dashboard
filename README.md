@@ -1,6 +1,6 @@
 # User Information Dashboard
 
-A responsive user dashboard that captures and manages user profile data. The webpage stores user information locally in the browser and provides a dynamic and personalized experience.
+A responsive user dashboard that captures and manages user profile data. The webpage stores user information locally in the browser and allows a user to view information after submission. It provides a dynamic and personalized experience.
 
 
 ---
