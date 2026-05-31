@@ -15,9 +15,14 @@ form.addEventListener("submit", function (event) {
     localStorage.setItem("age", age);
 
     // Display in separate divs
-    document.getElementById("displayName").textContent = name;
+
+    // Name
+    document.getElementById("displayName").textContent =  
+    "Hello, " + name;
+
+    // Age
     document.getElementById("displayAge").textContent = 
-     isNaN(age) ? "" : age; // terniary operator to check if age is a number
+    "You are " + (isNaN(age) ? "" : age) + " years old"; // terniary operator to check if age is a number
 
       //Check the age status
 

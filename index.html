@@ -8,12 +8,20 @@
     
 </head>
 <body class="bg-gray-100">
+    
     <main class= "">
+        
         <fieldset class="bg-white mt-15 mr-10 ml-10 rounded-lg shadow overflow-hidden">
-        <div class=" grid md:grid-cols-2 gap-8 mt-5 ml-5 mb-5">
-        <div>
-            <form id="userForm">
-                <p class="font-bold text-center text-2xl" >Please Enter Your Information</p>
+        
+            <div class=" grid md:grid-cols-2 gap-8 mt-5 ml-5 mb-5">
+        
+            <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+
+             <!-- Form -->
+            <form id="userForm" space-y-4>
+                <p class="font-bold text-center text-gray-4800 mb-4 text-2xl">
+                    Please Enter Your Information
+                </p>
                 <label for="name" class="block text-md font-semibold mb-1">Name:</label>
                 <input type="text" id="name" class="w-full p-3 rounded border border-gray-300" placeholder="Enter your name"><br>
                 <label for="name" class="block text-md font-semibold mb-1">Age:</label>
@@ -22,25 +30,37 @@
             </form>
         </div>
 
-        <div class="flex gap-1">
-          <h2>Welcome,</h2>
-          <p id="displayName"></p>
+        
+        <div class=" space-y-6">
+
+        <!-- Greetings -->
+
+        <div class=" flex gap-2 bg-purple-100 p-4 rounded-xl shadow-sm">
+        
+        <p id="displayName" class="text-2xl font-bold text-purple-700"></p>
         </div>
-        <div>
-          <h2>Your Age</h2>
-          <p id="displayAge"></p>
-          <p id="ageMonths"></p>
+
+        <!-- Age -->
+
+        <div class="bg-blue-100 p-4 rounded-xl shadow-sm">
+        <p id="displayAge" class="text-xl font-bold text-blue-700"></p><br>
+        <p id="ageMonths" class="text-md text-gray-600"></p>
         </div>
-       <div id="ageStatus" class="mt-3 font-semibold">
+
+        <!-- Status -->
+        <div class="bg-gray-200 p-10 rounded-xl shadow-sm">
+        <p class="text-xl  font-bold text-black" id="ageStatus"> </p>
+        </div>
+
+        <!-- Quotes -->
+        <div id="quotes" class="p-4 text-gray-700 space-y-1">
+
+        </div>
 
        </div>
-       <div id="quotes" class="mt-3 font-semibold">
-
-       </div>
-
        </div>
        
-        </fieldset>
+    </fieldset>
     </main>
     <script src="script.js" type="text/javascript"></script>
 </body>
